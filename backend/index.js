@@ -3,11 +3,20 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
+const projectRoutes = require("./routes/projectRoutes");
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.log("Error during MongoDB connection", err));
+
+app.use("/api/projects", projectRoutes);
 
 app.get("/", (req, res) => {
   res.send("OneStop Backend running...");
