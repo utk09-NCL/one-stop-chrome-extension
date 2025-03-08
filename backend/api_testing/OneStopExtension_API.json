@@ -1,0 +1,313 @@
+{
+  "v": 6,
+  "name": "OneStopExtension",
+  "folders": [],
+  "requests": [
+    {
+      "v": "11",
+      "name": "POST /api/projects",
+      "method": "POST",
+      "endpoint": "http://localhost:5001/api/projects",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\"name\":\"Project 1\",\"description\":\"This is project 1\",\"tags\":[\"web\",\"development\"]}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "GET /api/projects",
+      "method": "GET",
+      "endpoint": "http://localhost:5001/api/projects",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "GET /api/projects/:id",
+      "method": "GET",
+      "endpoint": "http://localhost:5001/api/projects/:id",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "PUT /api/projects/:id",
+      "method": "PUT",
+      "endpoint": "http://localhost:5001/api/projects/:id",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\"name\":\"Updated Project\",\"description\":\"This is an updated project\",\"tags\":[\"updated\",\"project\"]}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "DELETE /api/projects/:id",
+      "method": "DELETE",
+      "endpoint": "http://localhost:5001/api/projects/:id",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "POST /api/links",
+      "method": "POST",
+      "endpoint": "http://localhost:5001/api/links",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\"project\":\"project_id_here\",\"title\":\"Sample Link\",\"url\":\"https://example.com\",\"notes\":\"Sample notes\",\"tags\":[\"reference\",\"documentation\"]}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "GET /api/links",
+      "method": "GET",
+      "endpoint": "http://localhost:5001/api/links",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "GET /api/links/:id",
+      "method": "GET",
+      "endpoint": "http://localhost:5001/api/links/:id",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "PUT /api/links/:id",
+      "method": "PUT",
+      "endpoint": "http://localhost:5001/api/links/:id",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\"title\":\"Updated Link\",\"url\":\"https://example-updated.com\",\"notes\":\"Updated notes\",\"tags\":[\"updated\",\"reference\"]}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "DELETE /api/links/:id",
+      "method": "DELETE",
+      "endpoint": "http://localhost:5001/api/links/:id",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "POST /api/qas",
+      "method": "POST",
+      "endpoint": "http://localhost:5001/api/qas",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\"project\":\"project_id_here\",\"question\":\"Sample question?\",\"answer\":\"Sample answer\",\"url\":\"https://example.com\",\"tags\":[\"question\",\"help\"]}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "GET /api/qas",
+      "method": "GET",
+      "endpoint": "http://localhost:5001/api/qas",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "GET /api/qas/:id",
+      "method": "GET",
+      "endpoint": "http://localhost:5001/api/qas/:id",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "PUT /api/qas/:id",
+      "method": "PUT",
+      "endpoint": "http://localhost:5001/api/qas/:id",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\"question\":\"Updated question?\",\"answer\":\"Updated answer\",\"url\":\"https://updated-example.com\",\"tags\":[\"updated\",\"solved\"]}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "DELETE /api/qas/:id",
+      "method": "DELETE",
+      "endpoint": "http://localhost:5001/api/qas/:id",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    }
+  ],
+  "auth": {
+    "authType": "none",
+    "authActive": true
+  },
+  "headers": [],
+  "_ref_id": "coll_m7z01vte_7dea1301-54b5-463b-8fb4-96a2622a1093"
+}
