@@ -1,5 +1,6 @@
 import "@mantine/core/styles.css";
-import { Badge, Container, MantineProvider } from "@mantine/core";
+import { Container, MantineProvider } from "@mantine/core";
+import ProjectList from "./components/Projects/ProjectList";
 
 function App() {
   return (
@@ -9,10 +10,7 @@ function App() {
       defaultColorScheme="dark"
     >
       <Container py="md">
-        <h1>Hello!</h1>
-        <Badge size="lg" color="orange">
-          MLH GHW Cloud Week!
-        </Badge>
+        <ProjectList />
       </Container>
     </MantineProvider>
   );
