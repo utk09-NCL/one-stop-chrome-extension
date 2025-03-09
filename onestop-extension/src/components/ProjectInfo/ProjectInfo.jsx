@@ -2,6 +2,7 @@ import {
   Button,
   Container,
   Divider,
+  Flex,
   Grid,
   Group,
   Loader,
@@ -27,24 +28,22 @@ const ProjectInfo = () => {
   }, [projectId, fetchLinks, fetchQuestions]);
 
   return (
-    <Container>
-      <Group align="top">
-        <Title mb="md" order={4}>
-          Project Resources
-        </Title>
-        <Button size="compact-sm" onClick={() => navigate("/")}>
-          Back to Project
+    <Container p={0}>
+      <Flex gap="xs" justify="center" align="center">
+        <Title order={6}>Project Resources</Title>
+        <Button size="compact-xs" onClick={() => navigate("/")}>
+          Back
         </Button>
-      </Group>
+      </Flex>
 
-      <Divider label="Links" labelPosition="center" my="md" />
+      <Divider label="Links" labelPosition="center" my={0} />
 
       {links && links.length === 0 ? (
         <Text size="xs" align="center" my={0}>
           No links yet
         </Text>
       ) : links ? (
-        <Grid gutter="md">
+        <Grid gutter="xs">
           {links.map((link) => (
             <Grid.Col key={link._id}>
               <LinkCard link={link} />
@@ -55,14 +54,14 @@ const ProjectInfo = () => {
         <Loader type="dots" />
       )}
 
-      <Divider label="Q&A" labelPosition="center" my="md" />
+      <Divider label="Q&A" labelPosition="center" my={0} />
 
       {questions.length === 0 ? (
         <Text size="xs" align="center" my={0}>
           No Q&A yet
         </Text>
       ) : questions ? (
-        <Grid gutter="md">
+        <Grid gutter="xs">
           {questions.map((qa) => (
             <Grid.Col key={qa._id}>
               <QACard qa={qa} />

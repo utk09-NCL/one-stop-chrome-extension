@@ -11,7 +11,14 @@ function App() {
       withNormalizeCSS
       defaultColorScheme="dark"
     >
-      <Container py="md">
+      <Container
+        p="xs"
+        style={{
+          width: "400px",
+          maxHeight: "600px",
+          overflow: "auto",
+        }}
+      >
         <Routes>
           <Route path="/" element={<ProjectList />} />
           <Route path="/:projectId/info" element={<ProjectInfo />} />

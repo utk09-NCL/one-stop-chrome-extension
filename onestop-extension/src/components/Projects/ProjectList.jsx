@@ -1,4 +1,12 @@
-import { Button, Container, Grid, Group, Loader, Title } from "@mantine/core";
+import {
+  Button,
+  Container,
+  Flex,
+  Grid,
+  Group,
+  Loader,
+  Title,
+} from "@mantine/core";
 import { useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import useProjectStore from "../../store/useProjectStore";
@@ -11,19 +19,20 @@ const ProjectList = () => {
   }, [fetchProjects]);
 
   return (
-    <Container>
-      <Title align="center" mb="md">
-        My Projects
-      </Title>
-      <Button variant="outline" fullWidth>
-        Refresh Projects
-      </Button>
+    <Container p={0}>
+      <Flex gap="xs" justify="center" align="center">
+        <Title order={6}>My Projects</Title>
+        <Button variant="outline" size="xs">
+          Refresh Projects
+        </Button>
+      </Flex>
+
       {projects.length === 0 ? (
         <Group justify="center">
-          <Loader type="oval" />
+          <Loader type="oval" size={12} />
         </Group>
       ) : (
-        <Grid gutter="md" mt="md">
+        <Grid gutter="xs" mt="sm">
           {projects.map((project) => (
             <Grid.Col key={project._id}>
               <ProjectCard project={project} />

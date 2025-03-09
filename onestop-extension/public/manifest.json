@@ -1,7 +1,7 @@
 {
   "name": "OneStop Resource Manager",
   "short_name": "OneStop",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Manage your projects and resources efficiently.",
   "manifest_version": 3,
   "action": {
