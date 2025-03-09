@@ -1,5 +1,4 @@
 import { Anchor, Badge, Card, Group, Text, Title } from "@mantine/core";
-import React from "react";
 
 const LinkCard = ({ link }) => {
   return (
@@ -10,6 +9,7 @@ const LinkCard = ({ link }) => {
           {new Date(link.createdAt).toLocaleDateString()}
         </Text>
       </Group>
+
       {link.notes && (
         <Text size="sm" c="gray">
           {link.notes}
@@ -25,11 +25,7 @@ const LinkCard = ({ link }) => {
       {link.tags && link.tags.length > 0 && (
         <Group mt="md">
           {link.tags.map((tag, index) => (
-            <Badge
-              key={index}
-              variant="gradient"
-              gradient={{ from: "orange", to: "red", deg: 90 }}
-            >
+            <Badge key={index} color="cyan">
               {tag}
             </Badge>
           ))}

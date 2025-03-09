@@ -12,20 +12,18 @@ import { useNavigate, useParams } from "react-router";
 import QACard from "./QACard";
 import LinkCard from "./LinkCard";
 import useLinkStore from "../../stores/useLinkStore";
+import useQAStore from "../../stores/useQAStore";
 
 const ProjectInfo = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
-  // TODO: create useQAStore, complete useLinkStore()
   const { links, fetchLinks } = useLinkStore();
-  // const { questions, fetchQuestions } = useQAStore();
-  const questions = [];
-  console.log({ projectId });
+  const { questions, fetchQuestions } = useQAStore();
 
   useEffect(() => {
     fetchLinks(projectId);
-    // fetchQuestions(projectId);
-  }, [projectId, fetchLinks]);
+    fetchQuestions(projectId);
+  }, [projectId, fetchLinks, fetchQuestions]);
 
   return (
     <Container>
