@@ -12,10 +12,13 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Get All Links
+// Get All Links (with project filter)
 router.get("/", async (req, res) => {
   try {
-    const links = await Link.find().sort({ createdAt: -1 });
+    const { projectId } = req.query;
+    const query = projectId ? { project: projectId } : {};
+
+    const links = await Link.find(query).sort({ createdAt: -1 });
     res.json(links);
   } catch (error) {
     res.status(500).json(error);

@@ -12,10 +12,13 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Get All Q&A's
+// Get All Q&A's (with project filter)
 router.get("/", async (req, res) => {
   try {
-    const qas = await QA.find().sort({ createdAt: -1 });
+    const { projectId } = req.query;
+    const query = projectId ? { project: projectId } : {};
+
+    const qas = await QA.find(query).sort({ createdAt: -1 });
     res.json(qas);
   } catch (error) {
     res.status(500).json(error);

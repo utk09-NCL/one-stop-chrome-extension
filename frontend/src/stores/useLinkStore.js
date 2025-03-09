@@ -5,8 +5,10 @@ const API_URL = "http://localhost:5001/api/links";
 
 const useLinkStore = create((set) => ({
   links: [],
-  fetchLinks: async () => {
-    const response = await axios.get(API_URL);
+  fetchLinks: async (projectId) => {
+    const response = await axios.get(API_URL, {
+      params: projectId ? { projectId } : {},
+    });
     set({ links: response.data });
   },
   createLink: async (link) => {

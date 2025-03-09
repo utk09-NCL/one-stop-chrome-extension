@@ -5,6 +5,7 @@ import {
   Grid,
   Group,
   Loader,
+  Text,
   Title,
 } from "@mantine/core";
 import { useEffect } from "react";
@@ -38,9 +39,11 @@ const ProjectInfo = () => {
 
       <Divider label="Links" labelPosition="center" my="md" />
 
-      {links.length === 0 ? (
-        <Loader type="dots" />
-      ) : (
+      {links && links.length === 0 ? (
+        <Text size="xs" align="center" my={0}>
+          No links yet
+        </Text>
+      ) : links ? (
         <Grid gutter="md">
           {links.map((link) => (
             <Grid.Col key={link._id}>
@@ -48,13 +51,17 @@ const ProjectInfo = () => {
             </Grid.Col>
           ))}
         </Grid>
+      ) : (
+        <Loader type="dots" />
       )}
 
       <Divider label="Q&A" labelPosition="center" my="md" />
 
       {questions.length === 0 ? (
-        <Loader type="dots" />
-      ) : (
+        <Text size="xs" align="center" my={0}>
+          No Q&A yet
+        </Text>
+      ) : questions ? (
         <Grid gutter="md">
           {questions.map((qa) => (
             <Grid.Col key={qa._id}>
@@ -62,6 +69,8 @@ const ProjectInfo = () => {
             </Grid.Col>
           ))}
         </Grid>
+      ) : (
+        <Loader type="dots" />
       )}
     </Container>
   );

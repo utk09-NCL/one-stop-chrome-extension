@@ -5,8 +5,10 @@ const API_URL = "http://localhost:5001/api/qas";
 
 const useQAStore = create((set) => ({
   questions: [],
-  fetchQuestions: async () => {
-    const response = await axios.get(API_URL);
+  fetchQuestions: async (projectId) => {
+    const response = await axios.get(API_URL, {
+      params: projectId ? { projectId } : {},
+    });
     set({ questions: response.data });
   },
   createQuestion: async (question) => {
