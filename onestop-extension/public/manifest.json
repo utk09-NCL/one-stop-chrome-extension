@@ -1,0 +1,32 @@
+{
+  "name": "OneStop Resource Manager",
+  "short_name": "OneStop",
+  "version": "0.1.0",
+  "description": "Manage your projects and resources efficiently.",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "type": "module"
+    }
+  ],
+  "author": "UT",
+  "homepage_url": "https://localhost:5173"
+}
