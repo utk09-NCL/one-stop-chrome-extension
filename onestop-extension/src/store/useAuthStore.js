@@ -1,31 +1,39 @@
 import { create } from "zustand";
 import axios from "axios";
 
-// const APi_URL = "http://localhost:5001";
-const APi_URL = import.meta.env.VITE_API_URL;
+const APi_URL = "http://localhost:5001";
 
 axios.defaults.withCredentials = true;
 
 const useAuthStore = create((set) => ({
-  user: JSON.parse(localStorage.getItem("user")) || null,
+  user: JSON.parse(localStorage.getItem("extension_user")) || null,
   loading: false,
   error: null,
+  lastChecked: null,
 
   checkAuthStatus: async () => {
     set({ loading: true });
     try {
       const response = await axios.get(`${APi_URL}/auth/status`);
       if (response.data.isAuthenticated) {
-        localStorage.setItem("user", JSON.stringify(response.data.user));
-        set({ user: response.data.user, loading: false, error: null });
+        localStorage.setItem(
+          "extension_user",
+          JSON.stringify(response.data.user)
+        );
+        set({
+          user: response.data.user,
+          loading: false,
+          error: null,
+          lastChecked: Date.now(),
+        });
         return true;
       } else {
-        localStorage.removeItem("user");
+        localStorage.removeItem("extension_user");
         set({ user: null, loading: false, error: null });
         return false;
       }
     } catch (error) {
-      localStorage.removeItem("user");
+      localStorage.removeItem("extension_user");
       set({ user: null, loading: false, error: error.message });
       return false;
     }
@@ -34,10 +42,10 @@ const useAuthStore = create((set) => ({
   logout: async () => {
     try {
       await axios.get(`${APi_URL}/auth/logout`);
-      localStorage.removeItem("user");
+      localStorage.removeItem("extension_user");
       set({ user: null });
     } catch (error) {
-      localStorage.removeItem("user");
+      localStorage.removeItem("extension_user");
       console.error("Logout error:", error);
       set({ user: null });
     }

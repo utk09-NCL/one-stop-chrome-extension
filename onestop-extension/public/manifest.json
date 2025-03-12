@@ -1,7 +1,7 @@
 {
   "name": "OneStop Resource Manager",
   "short_name": "OneStop",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "Manage your projects and resources efficiently.",
   "manifest_version": 3,
   "action": {
@@ -11,10 +11,12 @@
   "permissions": [
     "storage",
     "activeTab",
-    "tabs"
+    "tabs",
+    "cookies"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "http://localhost:5173/",
+    "http://localhost:5001/"
   ],
   "content_scripts": [
     {
