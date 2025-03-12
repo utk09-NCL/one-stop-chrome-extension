@@ -6,6 +6,11 @@ const LinkSchema = new mongoose.Schema({
     ref: "Project",
     required: true,
   },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
   title: { type: String, required: true },
   url: { type: String, required: true },
   notes: String,

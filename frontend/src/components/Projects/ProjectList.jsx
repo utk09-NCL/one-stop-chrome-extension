@@ -10,6 +10,16 @@ const ProjectList = () => {
     fetchProjects();
   }, [fetchProjects]);
 
+  const handleLogin = () => {
+    const redirectURL = window.location.origin;
+    window.location.href = `http://localhost:5001/auth/github?redirect=${encodeURIComponent(
+      redirectURL
+    )}`;
+
+    console.log("Login with GitHub clicked");
+    console.log("Redirect URL:", redirectURL);
+  };
+
   return (
     <Container>
       <Title align="center" mb="md">
@@ -18,6 +28,7 @@ const ProjectList = () => {
       <Button variant="outline" fullWidth>
         Refresh Projects
       </Button>
+      <Button onClick={handleLogin}>Login with GitHub</Button>
       {projects.length === 0 ? (
         <Group justify="center">
           <Loader type="oval" />
