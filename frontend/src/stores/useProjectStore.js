@@ -3,6 +3,8 @@ import axios from "axios";
 
 const API_URL = "http://localhost:5001/api/projects";
 
+axios.defaults.withCredentials = true;
+
 const useProjectStore = create((set) => ({
   projects: [],
   fetchProjects: async () => {

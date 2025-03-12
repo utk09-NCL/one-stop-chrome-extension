@@ -3,6 +3,8 @@ import { create } from "zustand";
 
 const API_URL = "http://localhost:5001/api/links";
 
+axios.defaults.withCredentials = true;
+
 const useLinkStore = create((set) => ({
   links: [],
   fetchLinks: async (projectId) => {

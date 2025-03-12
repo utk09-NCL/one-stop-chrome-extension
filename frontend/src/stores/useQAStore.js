@@ -3,6 +3,8 @@ import { create } from "zustand";
 
 const API_URL = "http://localhost:5001/api/qas";
 
+axios.defaults.withCredentials = true;
+
 const useQAStore = create((set) => ({
   questions: [],
   fetchQuestions: async (projectId) => {
